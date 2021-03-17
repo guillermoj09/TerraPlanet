@@ -1,0 +1,556 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAMTECH | SGOMT</title>
+
+<!--- STYLE.JSP -->
+<!--- <%@include file="style.jsp"%> -->
+
+<link rel="shortcut icon" href="../../img/favicon.ico" />
+<link href="../../css/bootstrap.min.css" rel="stylesheet">
+<link href="../../css/plugins/c3/c3.min.css" rel="stylesheet">
+<link href="../../css/plugins/ionRangeSlider/ion.rangeSlider.css" rel="stylesheet">
+<link href="../../css/plugins/ionRangeSlider/ion.rangeSlider.skinFlat.css" rel="stylesheet">
+<link href="../../css/plugins/daterangepicker/daterangepicker-bs3.css" rel="stylesheet">
+<link href="../../css/plugins/dataTables/datatables.min.css" rel="stylesheet">
+<link href="../../font-awesome/css/font-awesome.css" rel="stylesheet">
+<link href="../../css/animate.css" rel="stylesheet">
+<link href="../../css/plugins/iCheck/custom.css" rel="stylesheet">
+<link href="../../css/style.css" rel="stylesheet">
+<link href="../../css/plugins/dualListbox/bootstrap-duallistbox.min.css" rel="stylesheet">
+<link href="../../css/plugins/daterangepicker/daterangepicker-bs3.css" rel="stylesheet">
+<link href="../../css/plugins/datapicker/datepicker3.css" rel="stylesheet">
+
+<link href="../../css/plugins/chosen/bootstrap-chosen.css" rel="stylesheet">
+
+<link href="../../css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
+
+<!--  Sub Menu -->
+<link href="../../css/submenu.css" rel="stylesheet">
+
+<link href="../../css/plugins/select2/select2.min.css" rel="stylesheet">
+
+
+<!---------------------------------------->
+
+<link href="../../css/plugins/clockpicker/clockpicker.css" rel="stylesheet">
+
+<!--- STYLE.JSP -->
+ 
+ <style>
+      
+      #map {
+        height: 400px !important;
+        width: 100% !important;
+      }
+      
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #floating-panel {
+        position: absolute;
+        top: 10px;
+        left: 25%;
+        z-index: 5;
+        background-color: #fff;
+        padding: 5px;
+        border: 1px solid #999;
+        text-align: center;
+        font-family: 'Roboto','sans-serif';
+        line-height: 30px;
+        padding-left: 10px;
+      }
+      #floating-panel {
+        background-color: #fff;
+        border: 1px solid #999;
+        left: 25%;
+        padding: 5px;
+        position: absolute;
+        top: 10px;
+        z-index: 5;
+      }
+    </style>
+ 
+ 
+  
+</head>
+<body class="top-navigation gray-bg">
+
+	<div id="wrapper">
+	
+  <!--- menu.JSP -->
+<!--- <%@include file="menu.jsp"%> -->
+	
+	<nav class="navbar navbar-static-top" role="navigation">
+    
+           <div class="navbar-header">
+                <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+                    <i class="fa fa-reorder"></i>
+                </button>
+                <a href="dashboard.html" class="navbar-brand">SGOMT </a>
+                
+            </div>
+           
+            <div class="navbar-collapse collapse" id="navbar">
+                <ul class="nav navbar-nav">
+                                                            
+                    <li class="dropdown">
+                        <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-road"></i> Mapas<span class="caret"></span></a>
+                        <ul role="menu" class="dropdown-menu">
+                            <li><a href="pageframe.html?id=FaListadoFlota" target="_blank">Mapa General</a></li>
+                            <li><a href="pageframe.html?id=kml_generico_new" target="_blank">Google Earth</a></li>                            
+                            <li class="dropdown-submenu">
+                               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mapa Faena</a>
+                                <ul class="dropdown-menu">                                                
+                                                <li ><a href="pageframe.html?id=maps/index">Spence</a></li>                                                
+                                   </ul>
+                             </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-group"></i> Administración <span class="caret"></span></a>
+                        <ul role="menu" class="dropdown-menu">                            
+                            <li><a href="pageframe.html?id=asigna-fae">Asignación de Faenas</a></li>
+                            <li><a href="asignatag.html">Asignación de Tags</a></li>
+                            <li><a href="pageframe.html?id=geoPoli2/index">Cercos Virtuales</a></li>
+                            <li><a href="pageframe.html?id=acciones_ibutton">Llaves Ibutton</a></li>
+                            <li><a href="pageframe.html?id=listadoconductores">Maestro de Conductores</a></li>
+                            <li><a href="pageframe.html?id=listado_faenas">Maestro Faenas</a></li>
+                            <li><a href="pageframe.html?id=marcas_de_terreno">Marcas de Terreno</a></li>
+                            <li><a href="pageframe.html?id=geo_cercas_dm_rutas">Rutas</a></li>
+                             <li class="dropdown-submenu">
+                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Usuarios</a>
+                                  <ul class="dropdown-menu">                                                
+                                         <li ><a href="crearusuario.html">Crear Usuario</a></li>
+                            <li><a href="consultarusuarios.html">Consultar Usuario</a></li>
+                                         <li class="divider"></li>
+                                         <li ><a href="cambiarclave.html?id=<%=usuario.getUsername()%>"> <i class="fa fa-key"></i> <span class="nav-label">Cambiar Clave</span></a></li>                                                
+                                    </ul>
+                             </li>                            
+                            <li><a href="pageframe.html?id=vehiculos_new">Vehículos</a></li>
+                            
+                            
+                        </ul>
+                    </li>
+                     <li class="dropdown">
+                        <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-truck"></i> Gestión de Flota <span class="caret"></span></a>
+                        <ul role="menu" class="dropdown-menu">
+                            <li><a href="pageframe.html?id=paginacion77_DM">Histórico</a></li>
+                            <li><a href="pageframe.html?id=geo_cercas_todos_new">Cercos Virtuales</a></li>                            
+                            <li class="dropdown-submenu">
+                               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Alarmas</a>
+                                <ul class="dropdown-menu">     
+                              <li ><a href="pageframe.html?id=alar_condicion">Alarma de Condicion</a></li>
+                            <li><a href="pageframe.html?id=alar_rut">Alarma de Ruta</a></li>                                             
+                                        <li ><a href="pageframe.html?id=detenciones_sostenidas_Ver2">Detenciones Sostenidas</a></li>
+                            <li><a href="pageframe.html?id=sobre_extendidas_new2">Velocidades Sostenidas</a></li>
+                                                                                                                                  
+                                   </ul>
+                             </li>        
+                             <li><a href="pageframe.html?id=informe_ibutton">Informe Tiempo de Conduccion</a></li>                      
+                        </ul>
+                    </li>
+                     <li class="dropdown">
+                        <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-line-chart"></i> Productividad <span class="caret"></span></a>
+                        <ul role="menu" class="dropdown-menu">
+
+                            <li><a href="reportetiempocarguio.html">Carguio</a></li>
+                            <li><a href="mapacalor.html">Mapa de Calor</a></li>
+                            <li><a href="sinoptico.html">Cuadro Sinoptico</a></li>
+                            <li><a href="diagramaentregado.html">Diagrama de Produccion</a></li>
+                            <li><a href="reporteindicadoroptimocarga.html">Grafico Toneladas</a></li>
+                            <li><a href="reportetiemfueraoperacion.html">Tiempo fuera de operacion</a></li>
+                            <li><a href="pageframe.html?id=listado4">Produccion por Turno</a></li>                             
+                            <li ><a href="reportetiempotransporte.html">Reporte Tiempo de Transporte</a></li>
+                            <li ><a href="reporteciclotransporte.html">Reporte Ciclo de Transporte</a></li>                             
+                        </ul>
+                    </li>
+                    
+                     <li class="dropdown">
+                        <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-plus-square"></i> Salud <span class="caret"></span></a>
+                        <ul role="menu" class="dropdown-menu">
+                            <li><a href="pageframe.html?id=Ralenti_CAN">Informe Ralenti</a></li>
+                            <li><a href="pageframe.html?id=Rendimiento_CAN_new">Informe Rendimiento</a></li>
+                            <li><a href="pageframe.html?id=Informe_Turno_Itinerario_CAN">Informe Datos X Turnos</a></li>
+                            <li><a href="detallexviaje.html">Detalle x Viaje</a></li>
+                            <li><a href="reporteresumenflota.htm">Resumen x Flota</a></li> 
+                        </ul>
+                    </li>
+                    
+
+                </ul>
+                <ul class="nav navbar-top-links navbar-right">
+                <li><span class="m-r-sm text-muted welcome-message">Bienvenido <%=usuario.getNombre() %>.</span></li>
+                    <li>
+                        <a href="logout.html">
+                            <i class="fa fa-sign-out"></i> SALIR
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+  <!--- menu.JSP -->
+<!--- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!--- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!--- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!--- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!--- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!--- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!--- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!--- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!--- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!--- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!--- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!--- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!--- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+	
+		 <div id="page-wrapper" class="gray-bg">
+		         
+        <!-- Titulo del Menu  -->
+        <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-sm-4">
+                    <h2></h2>
+                    <ol class="breadcrumb">
+                        <li>                           
+                             <a href="">Administracion</a>
+                        </li>                
+                        <li>
+                            Usuarios
+                        </li>
+                        <li>
+                            <strong>Crear Usuarios</strong>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        
+   <!-- Contenido principal  -->
+        <div class="wrapper wrapper-content animated fadeInRight">
+        
+        
+        <div class="row"> <!-- Bloque Formulario de busqueda --> 
+        
+                <div class="col-lg-12">
+                    <div class="ibox float-e-margins">
+                      <div class="ibox-title">
+                          <h5>Creacion de Usuarios &nbsp;&nbsp; &nbsp;&nbsp; <small> Por favor rellenar todos los campos ... </small></h5>                           
+                      </div>                      
+                      <div class="ibox-content">
+
+                        <div class="row">
+                            <div class="col-sm-2 b-r">
+                                <div class="form-group">
+                                  <label>Nombre de usuario</label> 
+                                  <input type="text" placeholder="jperez" class="form-control" name="usuLogin" id="usuLogin" maxlength="20"  tabindex="1">
+                                </div>
+                                <div class="form-group">
+                                  <label>Correo</label> 
+                                  <input type="email" placeholder="Enter email" class="form-control" name="usuMail" id="usuMail" tabindex="4">
+                                </div>
+                            </div>
+                            <div class="row col-sm-10">
+                                <div class="col-sm-2">
+                                      <div class="form-group">
+                                        <label>Nombre Completo</label> 
+                                        <input type="text" placeholder="Silva" class="form-control" name="usuNombre"  id="usuNombre"  tabindex="3">
+                                      </div> 
+                                </div>
+                                <div class="col-sm-2">                                        
+                                      <div class="form-group">
+                                        <label>Apellido</label> 
+                                        <input type="text" placeholder="Blanco" class="form-control" name="usuApellido" id="usuApellido" tabindex="6" maxlength="12">
+                                      </div>  
+                                </div>
+                                <div class="col-sm-2">                                   
+                                      <div class="form-group">
+                                        <label>Rut</label> 
+                                        <input type="text" placeholder="Blanco" class="form-control" name="usuRut" id="usuRut" tabindex="6" maxlength="12">
+                                      </div>   
+                                </div>
+                                <div class="col-sm-2">                               
+                                      <div class="form-group">
+                                        <label>Direccion</label> 
+                                        <input type="text" placeholder="Calle 9" class="form-control" name="usuDireccion" id="usuDireccion" tabindex="6" maxlength="12">
+                                      </div>
+                                </div>
+                                <div class="col-sm-2">                               
+                                      <div class="form-group">
+                                        <label>Direccion</label> 
+                                        <input type="text" placeholder="Calle 9" class="form-control" name="usuDireccion" id="usuDireccion" tabindex="6" maxlength="12">
+                                      </div>
+                                </div>
+                                <div class="col-sm-2">      
+                                      <div class="form-group">
+                                        <label>Activo</label> 
+                                        <select name="usuEstado"  id="usuEstado"   class="form-control col-sm-2" tabindex="7">
+                                          <option value="1" selected>SI</option>
+                                          <option value="0">NO</option>
+                                        </select>
+                                      </div>
+                                </div>
+                            </div>
+                            <div class="row col-sm-10">
+                                <div class="col-sm-2">
+                                      <div class="form-group">
+                                        <label>Nombre Completo</label> 
+                                        <input type="text" placeholder="Silva" class="form-control" name="usuNombre"  id="usuNombre"  tabindex="3">
+                                      </div> 
+                                </div>
+                                <div class="col-sm-2">                                        
+                                      <div class="form-group">
+                                        <label>Apellido</label> 
+                                        <input type="text" placeholder="Blanco" class="form-control" name="usuApellido" id="usuApellido" tabindex="6" maxlength="12">
+                                      </div>  
+                                </div>
+                                <div class="col-sm-2">                                   
+                                      <div class="form-group">
+                                        <label>Rut</label> 
+                                        <input type="text" placeholder="Blanco" class="form-control" name="usuRut" id="usuRut" tabindex="6" maxlength="12">
+                                      </div>   
+                                </div>
+                                <div class="col-sm-2">                               
+                                      <div class="form-group">
+                                        <label>Direccion</label> 
+                                        <input type="text" placeholder="Calle 9" class="form-control" name="usuDireccion" id="usuDireccion" tabindex="6" maxlength="12">
+                                      </div>
+                                </div>
+                                <div class="col-sm-2">                               
+                                      <div class="form-group">
+                                        <label>Direccion</label> 
+                                        <input type="text" placeholder="Calle 9" class="form-control" name="usuDireccion" id="usuDireccion" tabindex="6" maxlength="12">
+                                      </div>
+                                </div>
+                                <div class="col-sm-2">      
+                                      <div class="form-group">
+                                        <label>Activo</label> 
+                                        <select name="usuEstado"  id="usuEstado"   class="form-control col-sm-2" tabindex="7">
+                                          <option value="1" selected>SI</option>
+                                          <option value="0">NO</option>
+                                        </select>
+                                      </div>
+                                </div>
+                            </div>
+                            <div class="row col-sm-12">
+                                <div class="col-sm-2">
+                                      <div class="form-group">
+                                        <label>Nombre Completo</label> 
+                                        <input type="text" placeholder="Silva" class="form-control" name="usuNombre"  id="usuNombre"  tabindex="3">
+                                      </div> 
+                                </div>
+                                <div class="col-sm-2">                                        
+                                      <div class="form-group">
+                                        <label>Apellido</label> 
+                                        <input type="text" placeholder="Blanco" class="form-control" name="usuApellido" id="usuApellido" tabindex="6" maxlength="12">
+                                      </div>  
+                                </div>
+                                <div class="col-sm-2">                                   
+                                      <div class="form-group">
+                                        <label>Rut</label> 
+                                        <input type="text" placeholder="Blanco" class="form-control" name="usuRut" id="usuRut" tabindex="6" maxlength="12">
+                                      </div>   
+                                </div>
+                                <div class="col-sm-2">                               
+                                      <div class="form-group">
+                                        <label>Direccion</label> 
+                                        <input type="text" placeholder="Calle 9" class="form-control" name="usuDireccion" id="usuDireccion" tabindex="6" maxlength="12">
+                                      </div>
+                                </div>
+                                <div class="col-sm-2">                               
+                                      <div class="form-group">
+                                        <label>Direccion</label> 
+                                        <input type="text" placeholder="Calle 9" class="form-control" name="usuDireccion" id="usuDireccion" tabindex="6" maxlength="12">
+                                      </div>
+                                </div>
+                                <div class="col-sm-2">      
+                                      <div class="form-group">
+                                        <label>Activo</label> 
+                                        <select name="usuEstado"  id="usuEstado"   class="form-control col-sm-2" tabindex="7">
+                                          <option value="1" selected>SI</option>
+                                          <option value="0">NO</option>
+                                        </select>
+                                      </div>
+                                </div>
+                            </div>
+                            <div class="row col-sm-12">
+                                <div class="col-sm-2">
+                                      <div class="form-group">
+                                        <label>Nombre Completo</label> 
+                                        <input type="text" placeholder="Silva" class="form-control" name="usuNombre"  id="usuNombre"  tabindex="3">
+                                      </div> 
+                                </div>
+                                <div class="col-sm-2">                                        
+                                      <div class="form-group">
+                                        <label>Apellido</label> 
+                                        <input type="text" placeholder="Blanco" class="form-control" name="usuApellido" id="usuApellido" tabindex="6" maxlength="12">
+                                      </div>  
+                                </div>
+                                <div class="col-sm-2">                                   
+                                      <div class="form-group">
+                                        <label>Rut</label> 
+                                        <input type="text" placeholder="Blanco" class="form-control" name="usuRut" id="usuRut" tabindex="6" maxlength="12">
+                                      </div>   
+                                </div>
+                                <div class="col-sm-2">                               
+                                      <div class="form-group">
+                                        <label>Direccion</label> 
+                                        <input type="text" placeholder="Calle 9" class="form-control" name="usuDireccion" id="usuDireccion" tabindex="6" maxlength="12">
+                                      </div>
+                                </div>
+                                <div class="col-sm-2">                               
+                                      <div class="form-group">
+                                        <label>Direccion</label> 
+                                        <input type="text" placeholder="Calle 9" class="form-control" name="usuDireccion" id="usuDireccion" tabindex="6" maxlength="12">
+                                      </div>
+                                </div>
+                                <div class="col-sm-2">      
+                                      <div class="form-group">
+                                        <label>Activo</label> 
+                                        <select name="usuEstado"  id="usuEstado"   class="form-control col-sm-2" tabindex="7">
+                                          <option value="1" selected>SI</option>
+                                          <option value="0">NO</option>
+                                        </select>
+                                      </div>
+                                </div>
+                            </div>
+                        </div>
+                                                                                               <div class="hr-line-dashed"></div> 
+                          <div class="row">
+                            <div class="col-lg-12">
+                                <div id="map"></div>
+                            </div>                                              
+                          </div> 
+                                                                                                 <div class="hr-line-dashed"></div> 
+            							<div class="row">
+                            <div class="col-lg-12">
+                                <div class="col-lg-10 b-r">                                                                                                              
+                                <button class="btn btn-default " type="button" ><strong><span class="fa fa-caret-left"></span> Volver</strong></button>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button class="btn btn-default " type="button" ><strong><span class="fa fa-eraser"></span> Limpiar Campos</strong></button>&nbsp;&nbsp;&nbsp;&nbsp;
+                                </div>
+                							  <div class="col-lg-2 text-center">                                                                                                              
+                                        <button class="btn btn-primary " type="submit" >Guardar</button>
+                                </div>
+                            </div>                                              
+                          </div>                                                                                    
+                          </form:form>                            
+                      </div>                      
+                    </div>
+                </div>
+            </div>  <!-- Fin bloque Fomr de Busqueda -->   
+<!--- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!--- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!--- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!--- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!--- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!--- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!--- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!--- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!--- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!--- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!--- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!--- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!--- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->       
+        
+			       
+       </div>
+        
+      </div> <!-- fin wrapper -->
+
+    
+    </div>
+    
+    <!-- Mainly scripts -->
+    <script src="../../js/jquery-3.1.1.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="../../js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!-- Custom and plugin javascript -->
+    <script src="../../js/inspinia.js"></script>
+    <script src="../../js/plugins/pace/pace.min.js"></script>
+    
+    <!-- Peity  pie del porcentaje-->
+    <script src="../../js/plugins/peity/jquery.peity.min.js"></script>
+    <script src="../../js/demo/peity-demo.js"></script>
+    <!-- Peity demo -->
+     
+    
+    <!-- d3 and c3 charts -->
+    <script src="../../js/plugins/d3/d3.min.js"></script>
+    <script src="../../js/plugins/c3/c3.min.js"></script>
+        <!-- Date range use moment.js same as full calendar plugin -->
+	    <script src="../../js/plugins/fullcalendar/moment.min.js"></script>
+
+	<!-- Date range picker -->
+	<script src="../../js/plugins/daterangepicker/daterangepicker.js"></script>
+   <!-- Data picker -->
+   <script src="../../js/plugins/datapicker/bootstrap-datepicker.js"></script>
+    <script src="../../js/plugins/dataTables/datatables.min.js"></script>
+
+    <script src="../../js/plugins/dualListbox/jquery.bootstrap-duallistbox.js"></script>
+    
+      <script src="https://maps.googleapis.com/maps/api/js?client=gme-samtech&channel=heatmaps&libraries=visualization"></script> 
+    
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?client=gme-samtech&channel=heatmap&libraries=places"></script>  -->
+    
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?client=gme-samtech&channel=Telemetria&callback=initMap" async defer></script>  -->  
+    
+     <!-- select 2 -->
+    <script src="../../js/plugins/select2/select2.full.min.js"></script>
+	      
+
+
+    <script src="../../js/plugins/clockpicker/clockpicker.js"></script>
+    
+    <script>
+    
+    $( "select" ).select2( {
+		placeholder: "Seleccione...",
+		 allowClear: true
+		
+	} );
+    
+    var map, heatmap;   
+
+    //-33.4533624,-70.714213
+
+     map = new google.maps.Map(document.getElementById('map'), {
+              zoom: 12,
+              center: {lat: -33.4533624, lng: -70.714213},
+              mapTypeId: 'satellite'
+            }); 	
+
+
+    $('#data_1 .input-group.date').datepicker({
+      todayBtn: "linked",
+        keyboardNavigation: false,
+        forceParse: false,
+        calendarWeeks: true,
+        autoclose: true,
+        format: "dd/mm/yyyy"
+    });
+        
+
+      $('.clockpicker').clockpicker();
+
+	 
+        </script>
+        
+        
+
+
+    
+</body>
+
+</html>
+
+<!-- 
+
+&tipo=${e.tipoEncuesta}&usuario=${e.usuario}&fecha=<fmt:formatDate value="${e.fechaHora}" pattern="dd-MM-yyyy" />'
+
+ -->

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+
+
+
+	<persistence-unit name="sgomtDB">
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider> 		
+		<class>cl.samtech.sgomt.model.ConductorVehiculo</class>
+		<class>cl.samtech.sgomt.model.Device</class>
+		<class>cl.samtech.sgomt.model.TipoDevice</class>
+		<class>cl.samtech.sgomt.model.TipoVehiculo</class>
+		<class>cl.samtech.sgomt.model.UsuarioVehiculo</class>
+		<class>cl.samtech.sgomt.model.Vehiculo</class>
+		<class>cl.samtech.sgomt.model.VehiculoDevice</class>
+		<class>cl.samtech.sgomt.model.Cliente</class>
+		<class>cl.samtech.sgomt.model.Conductor</class>
+		<class>cl.samtech.sgomt.model.Grupo</class>
+		<class>cl.samtech.sgomt.model.GrupoVehiculo</class>
+		<class>cl.samtech.sgomt.model.Menu</class>
+		<class>cl.samtech.sgomt.model.Modulo</class>
+		<class>cl.samtech.sgomt.model.Parametro</class>
+		<class>cl.samtech.sgomt.model.Perfil</class>
+		<class>cl.samtech.sgomt.model.PerfilModulo</class>
+		<class>cl.samtech.sgomt.model.Proyecto</class>
+		<class>cl.samtech.sgomt.model.ProyectoGrupo</class>
+		<class>cl.samtech.sgomt.model.Rol</class>
+		<class>cl.samtech.sgomt.model.UruarioRol</class>
+		<class>cl.samtech.sgomt.model.Usuario</class>
+		<class>cl.samtech.sgomt.model.UsurioPerfil</class>
+		<class>cl.samtech.sgomt.model.Zona</class>
+		<class>cl.samtech.sgomt.model.DatoCanHorometro</class>
+		<class>cl.samtech.sgomt.model.DatoCanHorometroPK</class>
+		<class>cl.samtech.sgomt.model.DatosCanAlarma</class>
+		<class>cl.samtech.sgomt.model.DatosCanAlarmaPK</class>
+		<class>cl.samtech.sgomt.model.DatosCanDa</class>
+		<class>cl.samtech.sgomt.model.DatosCanDaPK</class>
+		<class>cl.samtech.sgomt.model.DatosCanFinFa</class>
+		<class>cl.samtech.sgomt.model.DatosCanFinFaPK</class>
+		<class>cl.samtech.sgomt.model.DatosCanFinFb</class>
+		<class>cl.samtech.sgomt.model.DatosCanFinFc</class>
+		<class>cl.samtech.sgomt.model.DatosCanFinFd</class>
+		<class>cl.samtech.sgomt.model.DatosCanGrafico</class>
+		<class>cl.samtech.sgomt.model.DatosCanGraficoPK</class>
+		<class>cl.samtech.sgomt.model.DatosCanHormetroAlarma</class>
+		<class>cl.samtech.sgomt.model.DatosCanInicio</class>
+		<class>cl.samtech.sgomt.model.DatosCanInicioPK</class>
+		<class>cl.samtech.sgomt.model.DatosCanReporte</class>
+		<class>cl.samtech.sgomt.model.DatosCanReportePK</class>
+		<class>cl.samtech.sgomt.model.DatosCanReporteUltimo</class>
+		<class>cl.samtech.sgomt.model.DatosCanReporteUltimoPK</class>
+		<class>cl.samtech.sgomt.model.DatosGp</class>
+		<class>cl.samtech.sgomt.model.DatosGpPK</class>
+		<class>cl.samtech.sgomt.model.DatosIbutton</class>
+		<class>cl.samtech.sgomt.model.DatosIbuttonPK</class>
+		<class>cl.samtech.sgomt.model.DatosIbuttonUltimo</class>
+		<class>cl.samtech.sgomt.model.DatosIbuttonUltimoPK</class>
+		<class>cl.samtech.sgomt.model.DatosPesometro</class>
+		<class>cl.samtech.sgomt.model.DatosPesometroPK</class>
+		<class>cl.samtech.sgomt.model.DatosRfid</class>
+		<class>cl.samtech.sgomt.model.DatosRfidPK</class>
+		<class>cl.samtech.sgomt.model.IdentificadorCanDa</class>
+		<class>cl.samtech.sgomt.model.VehiculoTag</class>
+		<class>cl.samtech.sgomt.model.Tag</class>
+		<class>cl.samtech.sgomt.model.UsuarioMenu</class>
+		<class>cl.samtech.sgomt.model.DatosGeocerca</class>
+		<class>cl.samtech.sgomt.model.DatosGeocercaPK</class>
+		<class>cl.samtech.sgomt.model.DatosTolva</class>
+		<class>cl.samtech.sgomt.model.DatosTolvaPK</class>
+		<class>cl.samtech.sgomt.model.DatosGpsUltimo</class>
+		<class>cl.samtech.sgomt.model.DatosGpsUltimoPK</class>
+		<class>cl.samtech.sgomt.model.EventosGp</class>
+		<class>cl.samtech.sgomt.model.ColorGeo</class>
+		<class>cl.samtech.sgomt.model.Ibuttom</class>
+		<class>cl.samtech.sgomt.model.IbuttomConductor</class>
+		<class>cl.samtech.sgomt.model.IconoMarcaterreno</class>
+		<class>cl.samtech.sgomt.model.MarcaTerreno</class>
+		<class>cl.samtech.sgomt.model.VehiculoCapacidadBalde</class>
+		<class>cl.samtech.sgomt.model.UsuarioHistorial</class>
+		<class>cl.samtech.sgomt.model.UsuarioSession</class>
+		<class>cl.samtech.sgomt.model.Turno</class>
+		<class>cl.samtech.sgomt.model.Turno2</class>
+		
+		<exclude-unlisted-classes>false</exclude-unlisted-classes>
+		<!-- WGsistemas2017 / 123 / 192.168.1.64 SGOMT /  192.168.2.54 SGOMT / 192.168.1.61 sgomttest 127.0.0.1   -->
+		<properties>
+			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://192.168.1.64/SGOMT" />
+			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
+			<property name="javax.persistence.jdbc.user" value="postgres" />
+			<property name="javax.persistence.jdbc.password" value="WGsistemas2017" />
+			<!-- <property name="javax.persistence.query.timeout" value="1000"/> global -->
+			<property name="eclipselink.ddl-generation" value="create-or-extend-tables" />		  
+			 
+		</properties>
+						
+	</persistence-unit>
+	
+	<persistence-unit name="gpsf">
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+			<!-- <class> </class>  -->
+					
+	<properties>
+		<property name="javax.persistence.jdbc.url" value="jdbc:sqlserver://192.168.1.7:1433;databaseName=BaseGPSF"/>
+        <property name="javax.persistence.jdbc.user" value="usuWEb2s"/>
+        <property name="javax.persistence.jdbc.password" value="Smt7$RtvB2"/>
+        <property name="javax.persistence.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
+        <property name="eclipselink.cache.shared.default" value="false"/>
+		</properties>
+	</persistence-unit>
+	
+	<persistence-unit name="gpsf02">
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+			<!-- <class> </class>  -->
+	<!-- samtech2008 sa / 192.168.1.12:1433 SGOMT / samtech2008 sa  192.168.2.52 -->				
+	<properties>
+		<property name="javax.persistence.jdbc.url" value="jdbc:sqlserver://192.168.1.12:1433;databaseName=Basegpse"/>
+        <property name="javax.persistence.jdbc.user" value="sa"/>
+        <property name="javax.persistence.jdbc.password" value="samtech2008"/>
+        <property name="javax.persistence.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
+        <property name="eclipselink.cache.shared.default" value="false"/>
+		</properties>
+	</persistence-unit>
+
+</persistence>
+
+

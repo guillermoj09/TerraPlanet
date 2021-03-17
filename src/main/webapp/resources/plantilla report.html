@@ -1,0 +1,609 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAMTECH | SGOMT</title>
+
+<!--- STYLE.JSP -->
+<!--- <%@include file="style.jsp"%> -->
+
+<link rel="shortcut icon" href="../../img/favicon.ico" />
+<link href="../../css/bootstrap.min.css" rel="stylesheet">
+<link href="../../css/plugins/c3/c3.min.css" rel="stylesheet">
+<link href="../../css/plugins/ionRangeSlider/ion.rangeSlider.css" rel="stylesheet">
+<link href="../../css/plugins/ionRangeSlider/ion.rangeSlider.skinFlat.css" rel="stylesheet">
+<link href="../../css/plugins/daterangepicker/daterangepicker-bs3.css" rel="stylesheet">
+<link href="../../css/plugins/dataTables/datatables.min.css" rel="stylesheet">
+<link href="../../font-awesome/css/font-awesome.css" rel="stylesheet">
+<link href="../../css/animate.css" rel="stylesheet">
+<link href="../../css/plugins/iCheck/custom.css" rel="stylesheet">
+<link href="../../css/style.css" rel="stylesheet">
+<link href="../../css/plugins/dualListbox/bootstrap-duallistbox.min.css" rel="stylesheet">
+<link href="../../css/plugins/daterangepicker/daterangepicker-bs3.css" rel="stylesheet">
+<link href="../../css/plugins/datapicker/datepicker3.css" rel="stylesheet">
+
+<link href="../../css/plugins/chosen/bootstrap-chosen.css" rel="stylesheet">
+
+<link href="../../css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
+
+<!--  Sub Menu -->
+<link href="../../css/submenu.css" rel="stylesheet">
+
+<link href="../../css/plugins/select2/select2.min.css" rel="stylesheet">
+
+
+<!---------------------------------------->
+
+<link href="../../css/plugins/clockpicker/clockpicker.css" rel="stylesheet">
+
+<!--- STYLE.JSP -->
+ 
+ <style>
+      
+      #map {
+        height: 500px !important;
+        width: 100% !important;
+      }
+      
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #floating-panel {
+        position: absolute;
+        top: 10px;
+        left: 25%;
+        z-index: 5;
+        background-color: #fff;
+        padding: 5px;
+        border: 1px solid #999;
+        text-align: center;
+        font-family: 'Roboto','sans-serif';
+        line-height: 30px;
+        padding-left: 10px;
+      }
+      #floating-panel {
+        background-color: #fff;
+        border: 1px solid #999;
+        left: 25%;
+        padding: 5px;
+        position: absolute;
+        top: 10px;
+        z-index: 5;
+      }
+    </style>
+ 
+ 
+  
+</head>
+<body class="top-navigation gray-bg">
+
+	<div id="wrapper">
+	
+  <!--- menu.JSP -->
+<!--- <%@include file="menu.jsp"%> -->
+	
+	<nav class="navbar navbar-static-top" role="navigation">
+    
+           <div class="navbar-header">
+                <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+                    <i class="fa fa-reorder"></i>
+                </button>
+                <a href="dashboard.html" class="navbar-brand">SGOMT </a>
+                
+            </div>
+           
+            <div class="navbar-collapse collapse" id="navbar">
+                <ul class="nav navbar-nav">
+                                                            
+                    <li class="dropdown">
+                        <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-road"></i> Mapas<span class="caret"></span></a>
+                        <ul role="menu" class="dropdown-menu">
+                            <li><a href="pageframe.html?id=FaListadoFlota" target="_blank">Mapa General</a></li>
+                            <li><a href="pageframe.html?id=kml_generico_new" target="_blank">Google Earth</a></li>                            
+                            <li class="dropdown-submenu">
+                               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mapa Faena</a>
+                                <ul class="dropdown-menu">                                                
+                                                <li ><a href="pageframe.html?id=maps/index">Spence</a></li>                                                
+                                   </ul>
+                             </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-group"></i> Administración <span class="caret"></span></a>
+                        <ul role="menu" class="dropdown-menu">                            
+                            <li><a href="pageframe.html?id=asigna-fae">Asignación de Faenas</a></li>
+                            <li><a href="asignatag.html">Asignación de Tags</a></li>
+                            <li><a href="pageframe.html?id=geoPoli2/index">Cercos Virtuales</a></li>
+                            <li><a href="pageframe.html?id=acciones_ibutton">Llaves Ibutton</a></li>
+                            <li><a href="pageframe.html?id=listadoconductores">Maestro de Conductores</a></li>
+                            <li><a href="pageframe.html?id=listado_faenas">Maestro Faenas</a></li>
+                            <li><a href="pageframe.html?id=marcas_de_terreno">Marcas de Terreno</a></li>
+                            <li><a href="pageframe.html?id=geo_cercas_dm_rutas">Rutas</a></li>
+                             <li class="dropdown-submenu">
+                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Usuarios</a>
+                                  <ul class="dropdown-menu">                                                
+                                         <li ><a href="crearusuario.html">Crear Usuario</a></li>
+                            <li><a href="consultarusuarios.html">Consultar Usuario</a></li>
+                                         <li class="divider"></li>
+                                         <li ><a href="cambiarclave.html?id=<%=usuario.getUsername()%>"> <i class="fa fa-key"></i> <span class="nav-label">Cambiar Clave</span></a></li>                                                
+                                    </ul>
+                             </li>                            
+                            <li><a href="pageframe.html?id=vehiculos_new">Vehículos</a></li>
+                            
+                            
+                        </ul>
+                    </li>
+                     <li class="dropdown">
+                        <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-truck"></i> Gestión de Flota <span class="caret"></span></a>
+                        <ul role="menu" class="dropdown-menu">
+                            <li><a href="pageframe.html?id=paginacion77_DM">Histórico</a></li>
+                            <li><a href="pageframe.html?id=geo_cercas_todos_new">Cercos Virtuales</a></li>                            
+                            <li class="dropdown-submenu">
+                               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Alarmas</a>
+                                <ul class="dropdown-menu">     
+                              <li ><a href="pageframe.html?id=alar_condicion">Alarma de Condicion</a></li>
+                            <li><a href="pageframe.html?id=alar_rut">Alarma de Ruta</a></li>                                             
+                                        <li ><a href="pageframe.html?id=detenciones_sostenidas_Ver2">Detenciones Sostenidas</a></li>
+                            <li><a href="pageframe.html?id=sobre_extendidas_new2">Velocidades Sostenidas</a></li>
+                                                                                                                                  
+                                   </ul>
+                             </li>        
+                             <li><a href="pageframe.html?id=informe_ibutton">Informe Tiempo de Conduccion</a></li>                      
+                        </ul>
+                    </li>
+                     <li class="dropdown">
+                        <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-line-chart"></i> Productividad <span class="caret"></span></a>
+                        <ul role="menu" class="dropdown-menu">
+
+                            <li><a href="reportetiempocarguio.html">Carguio</a></li>
+                            <li><a href="mapacalor.html">Mapa de Calor</a></li>
+                            <li><a href="sinoptico.html">Cuadro Sinoptico</a></li>
+                            <li><a href="diagramaentregado.html">Diagrama de Produccion</a></li>
+                            <li><a href="reporteindicadoroptimocarga.html">Grafico Toneladas</a></li>
+                            <li><a href="reportetiemfueraoperacion.html">Tiempo fuera de operacion</a></li>
+                            <li><a href="pageframe.html?id=listado4">Produccion por Turno</a></li>                             
+                            <li ><a href="reportetiempotransporte.html">Reporte Tiempo de Transporte</a></li>
+                            <li ><a href="reporteciclotransporte.html">Reporte Ciclo de Transporte</a></li>                             
+                        </ul>
+                    </li>
+                    
+                     <li class="dropdown">
+                        <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-plus-square"></i> Salud <span class="caret"></span></a>
+                        <ul role="menu" class="dropdown-menu">
+                            <li><a href="pageframe.html?id=Ralenti_CAN">Informe Ralenti</a></li>
+                            <li><a href="pageframe.html?id=Rendimiento_CAN_new">Informe Rendimiento</a></li>
+                            <li><a href="pageframe.html?id=Informe_Turno_Itinerario_CAN">Informe Datos X Turnos</a></li>
+                            <li><a href="detallexviaje.html">Detalle x Viaje</a></li>
+                            <li><a href="reporteresumenflota.htm">Resumen x Flota</a></li> 
+                        </ul>
+                    </li>
+                    
+
+                </ul>
+                <ul class="nav navbar-top-links navbar-right">
+                <li><span class="m-r-sm text-muted welcome-message">Bienvenido <%=usuario.getNombre() %>.</span></li>
+                    <li>
+                        <a href="logout.html">
+                            <i class="fa fa-sign-out"></i> SALIR
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+  <!--- menu.JSP -->
+<!--- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!--- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!--- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!--- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!--- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!--- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!--- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!--- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!--- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!--- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!--- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!--- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!--- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+	
+		 <div id="page-wrapper" class="gray-bg">
+		         
+        <!-- Titulo del Menu  -->
+        <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-sm-4">
+                    <h2></h2>
+                    <ol class="breadcrumb">
+                        <li>                           
+                             <a href="">SALUD</a>
+                        </li>                
+                        <li>
+                            <strong>Informe Rendimiento</strong>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        
+   <!-- Contenido principal  -->
+        <div class="wrapper wrapper-content animated fadeInRight">
+        
+        
+        <div class="row"> <!-- Bloque Formulario de busqueda --> 
+        
+                <div class="col-lg-12">
+                    <div class="ibox float-e-margins">
+                      <div class="ibox-title">
+                          <h5>Filtros <b>Informe Rendimientos</b> &nbsp;&nbsp; &nbsp;&nbsp; <small> Buscar por ... </small></h5>                           
+                          <div class="ibox-tools">
+                              <a class="collapse-link">
+                                  <i class="fa fa-chevron-up"></i>
+                              </a>
+                          </div>
+                      </div>                      
+                      <div class="ibox-content">
+  						            <form:form action="mapacalor.html" commandName="mapaCalorForm"  id="data_1" autocomplete="off">
+                          <!--
+                          <div class="row">                               
+                              <div class="col-lg-3">
+                                  <div class="form-group">
+                                      <label class="control-label">&nbsp; Fecha Desde</label>&nbsp;&nbsp; &nbsp;&nbsp; 
+                                      <div class="input-group date">
+                                          <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control" name="fechaDesde" value="" required>
+                                      </div>                                      
+                                  </div> 
+                              </div>
+                              <div class="col-lg-3">
+                                  <div class="form-group">
+                                      <label class="control-label">&nbsp; Fecha Hasta</label>&nbsp;&nbsp; &nbsp;&nbsp; 
+                                      <div class="input-group date">
+                                          <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control" name="fechaDesde" value="" required>
+                                      </div>                                      
+                                  </div> 
+                              </div>
+                          </div> 
+                                                                                              <div class="hr-line-dashed"></div>
+                          -->
+                          <div class="row">                               
+                              <div class="col-lg-3">
+                                  <div class="form-group">
+                                      <label class="control-label">&nbsp; Fecha Desde</label>&nbsp;&nbsp; &nbsp;&nbsp; 
+                                      <div class="input-group date">
+                                          <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control" name="fechaDesde" value="" required>
+                                      </div>                                      
+                                  </div> 
+                              </div>
+                              <div class="col-lg-3">
+                                  <div class="form-group">
+                                      <label class="control-label">&nbsp; Hora Desde</label>&nbsp;&nbsp; &nbsp;&nbsp; 
+                                      <div class="input-group clockpicker" data-autoclose="true">
+                                          <input type="text" class="form-control" value="09:30">
+                                          <span class="input-group-addon"><span class="fa fa-clock-o"></span></span>
+                                      </div>                                     
+                                  </div> 
+                              </div>
+                              <div class="col-lg-3">
+                                  <div class="form-group">
+                                      <label class="control-label">&nbsp; Fecha Hasta</label>&nbsp;&nbsp; &nbsp;&nbsp; 
+                                      <div class="input-group date">
+                                          <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control" name="fechaDesde" value="" required>
+                                      </div>                                      
+                                  </div> 
+                              </div>
+                              <div class="col-lg-3">
+                                  <div class="form-group">
+                                      <label class="control-label">&nbsp; Hora Hasta</label>&nbsp;&nbsp; &nbsp;&nbsp; 
+                                      <div class="input-group clockpicker" data-autoclose="true">
+                                          <input type="text" class="form-control" value="09:30">
+                                          <span class="input-group-addon"><span class="fa fa-clock-o"></span></span>
+                                      </div>                                       
+                                  </div> 
+                              </div>
+                          </div>                            
+                                                                                            <div class="hr-line-dashed"></div>
+                          <div class="row"> 								
+                              <div class="col-lg-2 ">   
+                                <div class="form-group">                                      
+                												<label>Faenas </label>
+                                        <div>
+                    												<select  name="faena" id="faena"  style="width:200px;" tabindex="4" class="form-control text-uppercase" required>                        														
+                    														<option value=""></option>
+                                                <option value="0" >GPS</option>
+                                                <option value="1" >CARGA</option>
+                                                <option value="2" >DESCARGA</option>                        																			
+                    												</select>
+                                        </div>											
+                							  </div>
+              							  </div>
+                              <div class="col-lg-2 b-r">   
+                                <div class="form-group">                                      
+                                        <label>Patentes </label>
+                                        <div>
+                                            <select  name="Patentes" id="Patentes"  style="width:200px;" tabindex="4" class="form-control text-uppercase" required>                                                   
+                                                <option value=""></option>
+                                                <option value="0" >GPS</option>
+                                                <option value="1" >CARGA</option>
+                                                <option value="2" >DESCARGA</option>                                                              
+                                            </select>
+                                        </div>                      
+                                </div>
+                              </div>
+                              <div class="col-lg-2 b-r">   
+                                <div class="form-group">                                      
+                                        <label>Velocidad >= a </label>
+                                        <div>
+                                            <select  name="Velocidad" id="Velocidad"  style="width:200px;" tabindex="4" class="form-control text-uppercase" required>                                                   
+                                                <option value=""></option>
+                                                <option value="0" >GPS</option>
+                                                <option value="1" >CARGA</option>
+                                                <option value="2" >DESCARGA</option>                                                              
+                                            </select>
+                                        </div>                      
+                                </div>
+                              </div>
+                              <div class="col-lg-2 b-r">   
+                                <div class="form-group">                                      
+                                        <label>Tipo </label>
+                                        <div>
+                                            <select  name="Tipo" id="Tipo"  style="width:200px;" tabindex="4" class="form-control text-uppercase" required>                                                   
+                                                <option value=""></option>
+                                                <option value="0" >GPS</option>
+                                                <option value="1" >CARGA</option>
+                                                <option value="2" >DESCARGA</option>                                                              
+                                            </select>
+                                        </div>                      
+                                </div>
+                              </div>
+                              <div class="col-lg-2 b-r">   
+                                <div class="form-group">                                      
+                                        <label>Buscar </label>
+                                        <div>
+                                            <input type="text" class="form-control" placeholder="Buscar...">
+                                        </div>                      
+                                </div>
+                              </div>
+                              <div class="col-lg-2">   
+                                <div class="form-group">                                      
+                                        <label>Seleccione </label>
+                                        <div>
+                                            <div class="radio radio-info radio-inline">
+                                                <input type="radio" id="inlineRadio1" value="option1" name="radioInline" checked="">
+                                                <label for="inlineRadio1"> Opcion Uno </label>
+                                            </div>
+                                            <div class="radio radio-info  radio-inline">
+                                                <input type="radio" id="inlineRadio2" value="option2" name="radioInline">
+                                                <label for="inlineRadio2"> Opcion Dos </label>
+                                            </div>
+                                        </div>                      
+                                </div>
+                              </div>							  
+  					              </div>
+                                                                                                <div class="hr-line-dashed"></div> 
+
+            							<div class="row">
+                            <div class="col-lg-12">
+                                <div class="col-lg-10 b-r">                                                                                                              
+                                        <button class="btn btn-primary " type="button"><i class="fa fa-check"></i>&nbsp;Submit</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <button class="btn btn-success " type="button"><i class="fa fa-upload"></i>&nbsp;&nbsp;<span class="bold">Upload</span></button>&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <button class="btn btn-info " type="button"><i class="fa fa-paste"></i> Edit</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <button class="btn btn-warning " type="button"><i class="fa fa-warning"></i> <span class="bold">Warning</span></button>&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <button class="btn btn-default " type="button"><i class="fa fa-map-marker"></i>&nbsp;&nbsp;Map</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                                </div>
+                							  <div class="col-lg-2 text-center">                                                                                                              
+                                        <button class="btn btn-primary " type="submit" >Buscar</button>
+                                </div>
+                            </div>                                              
+                          </div>                                                                                    
+                          </form:form>                            
+                      </div>                      
+                    </div>
+                </div>
+            </div>  <!-- Fin bloque Fomr de Busqueda -->   
+<!--- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!--- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!--- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!--- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!--- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!--- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!--- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!--- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!--- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!--- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!--- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!--- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!--- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->       
+        
+			       <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>Resultados <b>Informe Rendimiento</b></h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                <i class="fa fa-wrench"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-user">
+                                <li><a href="#">Config option 1</a>
+                                </li>
+                                <li><a href="#">Config option 2</a>
+                                </li>
+                            </ul>
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+
+                        <div class="table-responsive">
+                    <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper form-inline dt-bootstrap"><div class="html5buttons"><div class="dt-buttons btn-group"><a class="btn btn-default buttons-copy buttons-html5" tabindex="0" aria-controls="DataTables_Table_0" href="#"><span>Copy</span></a><a class="btn btn-default buttons-csv buttons-html5" tabindex="0" aria-controls="DataTables_Table_0" href="#"><span>CSV</span></a><a class="btn btn-default buttons-excel buttons-html5" tabindex="0" aria-controls="DataTables_Table_0" href="#"><span>Excel</span></a><a class="btn btn-default buttons-pdf buttons-html5" tabindex="0" aria-controls="DataTables_Table_0" href="#"><span>PDF</span></a><a class="btn btn-default buttons-print" tabindex="0" aria-controls="DataTables_Table_0" href="#"><span>Print</span></a></div></div><div class="dataTables_length" id="DataTables_Table_0_length"><label>Show <select name="DataTables_Table_0_length" aria-controls="DataTables_Table_0" class="form-control input-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label></div><div id="DataTables_Table_0_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control input-sm" placeholder="" aria-controls="DataTables_Table_0"></label></div><div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">Showing 1 to 10 of 57 entries</div><table class="table table-striped table-bordered table-hover dataTables-example dataTable" id="DataTables_Table_0" aria-describedby="DataTables_Table_0_info" role="grid">
+                    <thead>
+                    <tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 269px;">Rendering engine</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 332px;">Browser</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" style="width: 300px;">Platform(s)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending" style="width: 231px;">Engine version</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 167px;">CSS grade</th></tr>
+                    </thead>
+                    <tbody><tr class="gradeA odd" role="row">
+                        <td class="sorting_1">Gecko</td>
+                        <td>Firefox 1.0</td>
+                        <td>Win 98+ / OSX.2+</td>
+                        <td class="center">1.7</td>
+                        <td class="center">A</td>
+                    </tr><tr class="gradeA even" role="row">
+                        <td class="sorting_1">Gecko</td>
+                        <td>Firefox 1.5</td>
+                        <td>Win 98+ / OSX.2+</td>
+                        <td class="center">1.8</td>
+                        <td class="center">A</td>
+                    </tr><tr class="gradeA odd" role="row">
+                        <td class="sorting_1">Gecko</td>
+                        <td>Firefox 2.0</td>
+                        <td>Win 98+ / OSX.2+</td>
+                        <td class="center">1.8</td>
+                        <td class="center">A</td>
+                    </tr><tr class="gradeA even" role="row">
+                        <td class="sorting_1">Gecko</td>
+                        <td>Firefox 3.0</td>
+                        <td>Win 2k+ / OSX.3+</td>
+                        <td class="center">1.9</td>
+                        <td class="center">A</td>
+                    </tr><tr class="gradeA odd" role="row">
+                        <td class="sorting_1">Gecko</td>
+                        <td>Camino 1.0</td>
+                        <td>OSX.2+</td>
+                        <td class="center">1.8</td>
+                        <td class="center">A</td>
+                    </tr><tr class="gradeA even" role="row">
+                        <td class="sorting_1">Gecko</td>
+                        <td>Camino 1.5</td>
+                        <td>OSX.3+</td>
+                        <td class="center">1.8</td>
+                        <td class="center">A</td>
+                    </tr><tr class="gradeA odd" role="row">
+                        <td class="sorting_1">Gecko</td>
+                        <td>Netscape 7.2</td>
+                        <td>Win 95+ / Mac OS 8.6-9.2</td>
+                        <td class="center">1.7</td>
+                        <td class="center">A</td>
+                    </tr><tr class="gradeA even" role="row">
+                        <td class="sorting_1">Gecko</td>
+                        <td>Netscape Browser 8</td>
+                        <td>Win 98SE+</td>
+                        <td class="center">1.7</td>
+                        <td class="center">A</td>
+                    </tr><tr class="gradeA odd" role="row">
+                        <td class="sorting_1">Gecko</td>
+                        <td>Netscape Navigator 9</td>
+                        <td>Win 98+ / OSX.2+</td>
+                        <td class="center">1.8</td>
+                        <td class="center">A</td>
+                    </tr><tr class="gradeA even" role="row">
+                        <td class="sorting_1">Gecko</td>
+                        <td>Mozilla 1.0</td>
+                        <td>Win 95+ / OSX.1+</td>
+                        <td class="center">1</td>
+                        <td class="center">A</td>
+                    </tr></tbody>
+                    <tfoot>
+                    <tr><th rowspan="1" colspan="1">Rendering engine</th><th rowspan="1" colspan="1">Browser</th><th rowspan="1" colspan="1">Platform(s)</th><th rowspan="1" colspan="1">Engine version</th><th rowspan="1" colspan="1">CSS grade</th></tr>
+                    </tfoot>
+                    </table><div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate"><ul class="pagination"><li class="paginate_button previous disabled" id="DataTables_Table_0_previous"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="0" tabindex="0">Previous</a></li><li class="paginate_button active"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="1" tabindex="0">1</a></li><li class="paginate_button "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="2" tabindex="0">2</a></li><li class="paginate_button "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="3" tabindex="0">3</a></li><li class="paginate_button "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="4" tabindex="0">4</a></li><li class="paginate_button "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="5" tabindex="0">5</a></li><li class="paginate_button "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="6" tabindex="0">6</a></li><li class="paginate_button next" id="DataTables_Table_0_next"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="7" tabindex="0">Next</a></li></ul></div></div>
+                        </div>
+
+                    </div>
+                </div>
+                </div>
+            </div>
+
+       
+       </div>
+        
+      </div> <!-- fin wrapper -->
+
+    
+    </div>
+    
+    <!-- Mainly scripts -->
+    <script src="../../js/jquery-3.1.1.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="../../js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!-- Custom and plugin javascript -->
+    <script src="../../js/inspinia.js"></script>
+    <script src="../../js/plugins/pace/pace.min.js"></script>
+    
+    <!-- Peity  pie del porcentaje-->
+    <script src="../../js/plugins/peity/jquery.peity.min.js"></script>
+    <script src="../../js/demo/peity-demo.js"></script>
+    <!-- Peity demo -->
+     
+    
+    <!-- d3 and c3 charts -->
+    <script src="../../js/plugins/d3/d3.min.js"></script>
+    <script src="../../js/plugins/c3/c3.min.js"></script>
+        <!-- Date range use moment.js same as full calendar plugin -->
+	    <script src="../../js/plugins/fullcalendar/moment.min.js"></script>
+
+	<!-- Date range picker -->
+	<script src="../../js/plugins/daterangepicker/daterangepicker.js"></script>
+   <!-- Data picker -->
+   <script src="../../js/plugins/datapicker/bootstrap-datepicker.js"></script>
+    <script src="../../js/plugins/dataTables/datatables.min.js"></script>
+
+    <script src="../../js/plugins/dualListbox/jquery.bootstrap-duallistbox.js"></script>
+    
+      <script src="https://maps.googleapis.com/maps/api/js?client=gme-samtech&channel=heatmaps&libraries=visualization"></script> 
+    
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?client=gme-samtech&channel=heatmap&libraries=places"></script>  -->
+    
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?client=gme-samtech&channel=Telemetria&callback=initMap" async defer></script>  -->  
+    
+     <!-- select 2 -->
+    <script src="../../js/plugins/select2/select2.full.min.js"></script>
+	      
+
+
+    <script src="../../js/plugins/clockpicker/clockpicker.js"></script>
+    
+    <script>
+    
+    $( "select" ).select2( {
+		placeholder: "Seleccione...",
+		 allowClear: true
+		
+	} );
+    
+    var map, heatmap;    	
+
+
+    $('#data_1 .input-group.date').datepicker({
+      todayBtn: "linked",
+        keyboardNavigation: false,
+        forceParse: false,
+        calendarWeeks: true,
+        autoclose: true,
+        format: "dd/mm/yyyy"
+    });
+        
+
+      $('.clockpicker').clockpicker();
+
+	 
+        </script>
+        
+        
+
+
+    
+</body>
+
+</html>
+
+<!-- 
+
+&tipo=${e.tipoEncuesta}&usuario=${e.usuario}&fecha=<fmt:formatDate value="${e.fechaHora}" pattern="dd-MM-yyyy" />'
+
+ -->
